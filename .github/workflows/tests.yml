@@ -11,8 +11,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     env:
-      BASE_URL: http://localhost:3000
-      MONGODB_URI: mongodb://127.0.0.1:27017/gestao-de-alunos-test
+      BASE_URL: ${{secrets.BASE_URL}}
+      ADMIN_USER: ${{secrets.ADMIN_USER}}
+      ADMIN_PASSWORD: ${{secrets.ADMIN_PASSWORD}}
+      MONGODB_URI: ${{secrets.MONGODB_URI}}
 
     services:
       mongodb:

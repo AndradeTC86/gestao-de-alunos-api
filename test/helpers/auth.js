@@ -11,8 +11,8 @@ export async function getAdminToken(){
             .post('/api/auth/login')
             .set('Content-Type', 'application/json')
             .send({
-                email: usuario.email,
-                senha: usuario.senha
+                email: process.env.ADMIN_USER,
+                senha: process.env.ADMIN_PASSWORD
             })
             adminToken = loginResposta.body.token
     }

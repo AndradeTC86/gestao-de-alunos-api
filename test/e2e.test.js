@@ -4,8 +4,14 @@ import { api } from './helpers/api.js'
 import { novoAluno } from './factory/alunosFactory.js'
 import { novaDisciplina } from './factory/disciplinasFactory.js'
 import dadosTeste from './fixtures/e2e.json' with { type: 'json' }
+import mongoose from 'mongoose'
 
-describe('Alunos', () => {    
+describe('Alunos', () => {
+    
+    after(async () => {
+        await mongoose.connection.close();
+    })
+    
     for (const dadosTrabalho of dadosTeste.trabalhos) {
     it(`Deve cadastrar o trabalho "${dadosTrabalho.titulo}" para um aluno matriculado`, async () => {
         const aluno = novoAluno()

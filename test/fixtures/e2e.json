@@ -1,7 +1,15 @@
 {
   "trabalhos": [
     {
-      "titulo": "Exercicio Final",
+      "titulo": "Exercicio Extra de Automação de API GraphQL",
+      "descricao": "Entrega do exercicio extra da aula de API GraphQL"
+    },
+    {
+      "titulo": "Exercicio Extra de Automação de API REST",
+      "descricao": "Entrega do exercicio extra da aula de API REST"
+    },
+    {
+      "titulo": "Exercicio Final de Automação na Camada de Serviço",
       "descricao": "Entrega do exercicio avaliativo da disciplina"
     }
   ]
