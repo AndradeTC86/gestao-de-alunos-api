@@ -11,10 +11,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     env:
-      BASE_URL: ${{secrets.BASE_URL}}
-      ADMIN_USER: ${{secrets.ADMIN_USER}}
-      ADMIN_PASSWORD: ${{secrets.ADMIN_PASSWORD}}
-      MONGODB_URI: ${{secrets.MONGODB_URI}}
+      BASE_URL: ${{env.BASE_URL}}
+      ADMIN_USER: ${{env.ADMIN_USER}}
+      ADMIN_PASSWORD: ${{env.ADMIN_PASSWORD}}
+      MONGODB_URI: ${{env.MONGODB_URI}}
 
     services:
       mongodb:
