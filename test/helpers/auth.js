@@ -1,6 +1,5 @@
 import { api } from '../helpers/api.js'
 import 'dotenv/config'
-import usuario from '../fixtures/credencial.json' with { type: 'json' }
 
 let adminToken = null
 const userTokens = new Map()
