@@ -9,12 +9,7 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
-    env:
-      BASE_URL: ${{env.BASE_URL}}
-      ADMIN_USER: ${{env.ADMIN_USER}}
-      ADMIN_PASSWORD: ${{env.ADMIN_PASSWORD}}
-      MONGODB_URI: ${{env.MONGODB_URI}}
+    runs-on: ubuntu-latest   
 
     services:
       mongodb:
@@ -39,6 +34,11 @@ jobs:
 
       - name: Instalar dependências
         run: npm ci
+
+      - name: Criar arquivo .env
+              run: |
+                  touch .env
+                  echo "${{secrets.TEST_SECRETS}}" >> .env
 
       - name: Iniciar API
         run: npm start > server.log 2>&1 &
